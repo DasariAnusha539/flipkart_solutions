@@ -1,0 +1,23 @@
+STRANGE MATRIX:
+
+class Solution:
+    # do not edit this function
+    # use it to get the value of A[i][j]
+    def get(self, i, j):
+      return a.get(i,j)
+      
+    def solve(self, R, C):
+        # code here
+        a=0
+        b=-1
+        for i in range(C):
+            if(self.get(0,i)==1):
+                b=i
+                break
+        if(b==-1):
+            b=C-1
+        for i in range(R):
+            while(b>=0 and self.get(i,b)==1):
+                b-=1
+                a=i
+        return(a)
