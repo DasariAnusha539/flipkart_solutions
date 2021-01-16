@@ -1,0 +1,15 @@
+REARRANGE THE DIGITS:
+
+
+class Solution:
+    def smallestnum (self,N):
+        # code here 
+        l=list(str(N))
+        l1=sorted(l)
+        c=0
+        for i in range(len(l1)):
+            if(l1[i]!='0'):
+                c=l1.pop(i)
+                break
+        string1=str(c)+"".join(l1)
+        return(int(string1))
