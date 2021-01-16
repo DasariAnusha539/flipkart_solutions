@@ -1,0 +1,10 @@
+WAVE ARRAY:
+
+class Solution:
+    def convertToWave(self, arr, N):
+        # code here
+        n=0
+        while(n<N-1):
+            arr[n],arr[n+1]=arr[n+1],arr[n]
+            n+=2
+        return(arr)
