@@ -1,0 +1,38 @@
+Find a pair with given target in BST
+solution:
+
+
+class Solution{
+    public int isPairPresent(Node root, int target){
+        // code here
+        if(root==null)
+        return(0);
+        ArrayList<Integer> a=listconverstion(root,new ArrayList<>()); 
+        int s=0;
+        int e=a.size()-1;
+        while(s<e){
+            if(a.get(s)+a.get(e)==target){
+                return(1);
+            }
+            if(a.get(s)+a.get(e)<target){
+                s++;
+            }
+            if(a.get(s)+a.get(e)>target){
+                e--;
+            }
+            
+        }
+        return(0);
+    }
+    public ArrayList<Integer> listconverstion(Node root,ArrayList<Integer> l){
+        if(root==null){
+            return(l);
+        
+        }
+        listconverstion(root.left,l);
+        l.add(root.data);
+        listconverstion(root.right,l);
+    return(l);
+        
+    }
+}
